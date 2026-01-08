@@ -1,0 +1,48 @@
+﻿<Window
+    Height="450"
+    Title="Register"
+    Width="800"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d"
+    x:Class="lab2_4.Register"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:lab2_4"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Window.Resources>
+        <ResourceDictionary Source="styles.xaml" />
+    </Window.Resources>
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock
+                FontSize="20"
+                HorizontalAlignment="Center"
+                Margin="0,0,0,20"
+                Text="Реєстрація" />
+
+            <TextBlock Text="Ім'я користувача:" />
+            <TextBox Text="{Binding name}" x:Name="UsernameTextBox" />
+
+            <TextBlock Text="Пароль:" />
+            <PasswordBox PasswordChanged="PasswordBox_PasswordChanged" x:Name="PasswordBox" />
+
+            <StackPanel
+                HorizontalAlignment="Center"
+                Margin="0,20,0,0"
+                Orientation="Horizontal">
+                <Button
+                    Click="Close"
+                    Content="Повернутись до логіну"
+                    Height="35"
+                    Width="200" />
+                <Button
+                    Click="RegisterButton_Click"
+                    Content="Зареєструватися"
+                    Height="35"
+                    Width="150" />
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,46 @@
+﻿<Window
+    Height="450"
+    Title="Receipt"
+    Width="400"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d"
+    x:Class="lab2_4.Receipt"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:lab2_4"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Window.Resources>
+        <ResourceDictionary Source="../styles.xaml" />
+    </Window.Resources>
+    <Grid>
+        <Button
+            Click="Close"
+            Content="Вийти"
+            Height="40"
+            HorizontalAlignment="Right"
+            Margin="30,10,10,0"
+            VerticalAlignment="Top"
+            Width="100" />
+        <StackPanel Margin="20">
+            <TextBlock
+                FontSize="24"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Text="Квитанція" />
+            <TextBlock FontSize="18" Text="Номер замовлення:" />
+            <TextBlock
+                FontSize="16"
+                FontWeight="Bold"
+                Text="{Binding viewModel.OrderNumber}" />
+            <TextBlock FontSize="18" Text="Вибрані елементи:" />
+            <ListBox Height="200" ItemsSource="{Binding SelectedItems}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>
